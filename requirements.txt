@@ -1,0 +1,3 @@
+# Core demo uses Python standard library only.
+# Optional test runner: pytest
+# pytest>=8.0

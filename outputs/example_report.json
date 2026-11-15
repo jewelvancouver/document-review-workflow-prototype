@@ -1,0 +1,79 @@
+{
+  "project": "Document Review Workflow Prototype",
+  "processing_mode": "offline_rule_based_demo",
+  "document_count": 2,
+  "documents": [
+    {
+      "filename": "contract_a.md",
+      "fields": {
+        "company_name": {
+          "value": "Example Transport Ltd",
+          "evidence": "Company: Example Transport Ltd"
+        },
+        "start_date": {
+          "value": "2026-12-01",
+          "evidence": "Start date: 1 December 2026"
+        },
+        "end_date": {
+          "value": "2026-12-15",
+          "evidence": "End date: 15 December 2026"
+        },
+        "contract_amount": {
+          "value": "NAD 25000.00",
+          "evidence": "Contract amount: N$25,000"
+        }
+      },
+      "missing_fields": [],
+      "validation_errors": []
+    },
+    {
+      "filename": "contract_b.md",
+      "fields": {
+        "company_name": {
+          "value": "Example Transport Ltd",
+          "evidence": "Company: Example Transport Ltd"
+        },
+        "start_date": {
+          "value": "2026-12-01",
+          "evidence": "Start date: 1 December 2026"
+        },
+        "end_date": {
+          "value": "2026-12-20",
+          "evidence": "End date: 20 December 2026"
+        },
+        "contract_amount": {
+          "value": null,
+          "evidence": null
+        }
+      },
+      "missing_fields": [
+        "contract_amount"
+      ],
+      "validation_errors": []
+    }
+  ],
+  "missing_fields": [
+    "contract_amount"
+  ],
+  "conflicts": [
+    {
+      "field": "end_date",
+      "values": [
+        {
+          "document": "contract_a.md",
+          "value": "2026-12-15",
+          "evidence": "End date: 15 December 2026"
+        },
+        {
+          "document": "contract_b.md",
+          "value": "2026-12-20",
+          "evidence": "End date: 20 December 2026"
+        }
+      ]
+    }
+  ],
+  "validation_errors": [],
+  "rejected_inputs": [],
+  "requires_human_review": true,
+  "important_note": "This portfolio prototype uses explicit labelled-field rules, not an AI model. It demonstrates document workflow, validation, evidence tracking and testing."
+}

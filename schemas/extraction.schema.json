@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Document Field Extraction",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "company_name": {"type": ["string", "null"]},
+    "start_date": {"type": ["string", "null"], "description": "ISO date YYYY-MM-DD when known"},
+    "end_date": {"type": ["string", "null"], "description": "ISO date YYYY-MM-DD when known"},
+    "contract_amount": {"type": ["string", "null"], "description": "Normalised NAD amount, or null when absent"},
+    "evidence": {
+      "type": "object",
+      "additionalProperties": {"type": ["string", "null"]}
+    },
+    "contract_reference": {
+      "type": ["string", "null"]
+} 
+  },
+  "required": ["company_name", "start_date", "end_date", "contract_amount", "evidence", "contract_reference"]
+}
