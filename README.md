@@ -26,10 +26,9 @@ A small, offline Python portfolio project for a document-workflow internship. It
 
 ## Run on Windows PowerShell
 
-1. Download and extract the ZIP.
-2. Open the extracted `Document_Review_Workflow_Portfolio_Project` folder in VS Code.
-3. In VS Code, choose **Terminal → New Terminal**.
-4. Run:
+1. Open `Document_Review_Workflow_Portfolio_Project` folder in VS Code.
+2. In VS Code, choose **Terminal → New Terminal**.
+3. Run:
 
    ```powershell
    py --version
@@ -59,23 +58,6 @@ Ran 6 tests in 1.058s
 FAILED (failures=2) -> [Resolved after updating mock files and missing field counts] -> 
 Ran 6 tests in ~1.0s
 OK
-
-## Try your own documents
-
-Use only fictional practice documents. Create `.txt` or `.md` files with labelled lines such as:
-
-```text
-Company: Example Transport Ltd
-Start date: 1 December 2026
-End date: 15 December 2026
-Contract amount: N$25,000
-```
-
-Then run:
-
-```powershell
-py main.py path\to\your\practice_documents
-```
 
 ## Project structure
 
@@ -107,13 +89,4 @@ No production security audit: The repository is structured as a portfolio demons
 
 ## Suggested next improvements
 
-1. Add a new field such as `contract_reference` and write tests for it.
-2. Improve support for different labelled date formats.
-3. Add a report summary suitable for a human reviewer.
-4. Connect an approved AI provider only when the internship supervisor or authorised account holder confirms the permitted service and data rules. See `docs/AI_INTEGRATION_PLAN.md`.
-
 To scale document extraction beyond rigid regular expressions, an approved LLM provider (such as OpenAI, Anthropic, or an on-premise open-weights model via vLLM) could be integrated by replacing the rule-based extractor.py module with a structured prompting layer. By leveraging JSON mode or function calling, the model would parse raw text into the exact schema required (schemas/extraction.schema.json). To test this safely, we would introduce mock LLM response fixtures in the unit test suite, implement fallback mechanisms for network timeouts, and run evaluation benchmarks against a golden dataset of contract samples to measure extraction accuracy.
-
-## Portfolio and confidentiality
-
-Use fictional data only. Never add passwords, API keys, private documents or real customer information to this repository. Read `PORTFOLIO_NOTES.md` before describing the project so its current capabilities are represented accurately.
